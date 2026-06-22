@@ -1,0 +1,51 @@
+2026-01-15 08:00:01 INFO  [main] Application started
+2026-01-15 08:00:02 INFO  [main] Loaded config from /etc/app/config.yaml
+2026-01-15 08:01:15 WARN  [db] Connection pool running low (3/10 free)
+2026-01-15 08:02:30 INFO  [http] GET /api/users 200 (45ms)
+2026-01-15 08:03:12 ERROR [auth] Failed login attempt for user=alice ip=10.0.0.5
+2026-01-15 08:03:45 INFO  [http] GET /api/products 200 (12ms)
+2026-01-15 08:04:01 WARN  [cache] Redis hit rate below threshold (42%)
+2026-01-15 08:05:22 ERROR [db] Query timeout after 30s: SELECT * FROM orders
+2026-01-15 08:06:10 INFO  [worker] Job #4521 completed
+2026-01-15 08:07:33 ERROR [auth] Failed login attempt for user=bob ip=10.0.0.6
+2026-01-15 08:08:15 INFO  [http] POST /api/orders 201 (88ms)
+2026-01-15 0
+2026-01-15 08:43:30 ERROR [payment] Stripe API returned 500 for charge_id=ch_12348
+2026-01-15 08:44:15 INFO  [http] POST /api/orders 201 (102ms)
+2026-01-15 08:45:01 WARN  [db] Slow query detected (1.8s): SELECT * FROM audit_log
+2026-01-15 08:46:33 ERROR [auth] Failed login attempt for user=bob ip=10.0.0.6
+2026-01-15 08:47:45 INFO  [worker] Job #4525 completed
+2026-01-15 08:48:01 WARN  [db] Connection pool running low (3/10 free)
+2026-01-15 08:49:22 ERROR [db] Query timeout after 30s: SELECT * FROM orders WHERE date > ?
+2026-01-15 08:50:30 INFO  [http] GET /api/products 200 (18ms)
+2026-01-15 08:51:15 WARN  [worker] Queue depth growing: 2387 pending
+2026-01-15 08:52:01 ERROR [auth] Failed login attempt for user=alice ip=10.0.0.5
+2026-01-15 08:53:45 INFO  [main] Health check passed
+2026-01-15 08:54:30 WARN  [cache] Redis hit rate below threshold (37%)
+2026-01-15 08:55:22 ERROR [payment] Stripe API returned 500 for charge_id=ch_12349
+2026-01-15 08:56:01 INFO  [worker] Job #4526 completed
+2026-01-15 08:57:15 WARN  [db] Slow query detected (2.1s): SELECT * FROM products WHERE category=?
+2026-01-15 08:58:30 ERROR [auth] Failed login attempt for user=carol ip=10.0.0.7
+2026-01-15 08:59:45 INFO  [http] GET /api/orders 200 (35ms)
+2026-01-15 09:00:01 INFO  [main] Hourly metrics exported
+2026-01-15 09:01:22 ERROR [auth] Failed login attempt for user=alice ip=10.0.0.5
+2026-01-15 09:02:15 WARN  [db] Connection pool running low (2/10 free)
+2026-01-15 09:03:30 INFO  [http] POST /api/orders 201 (78ms)
+2026-01-15 09:04:45 WARN  [worker] Queue depth growing: 2612 pending
+2026-01-15 09:05:01 ERROR [payment] Stripe API returned 500 for charge_id=ch_12350
+2026-01-15 09:06:22 INFO  [worker] Job #4527 completed
+2026-01-15 09:07:15 WARN  [cache] Redis hit rate below threshold (40%)
+2026-01-15 09:08:30 ERROR [auth] Failed login attempt for user=dave ip=10.0.0.8
+2026-01-15 09:09:45 INFO  [http] GET /api/users 200 (38ms)
+2026-01-15 09:10:01 WARN  [db] Slow query detected (1.3s): SELECT COUNT(*) FROM sessions
+2026-01-15 09:11:22 ERROR [db] Query timeout after 30s: SELECT * FROM notifications
+2026-01-15 09:12:30 INFO  [main] Health check passed
+2026-01-15 09:13:15 WARN  [worker] Queue depth growing: 2845 pending
+2026-01-15 09:14:01 ERROR [auth] Failed login attempt for user=eve ip=10.0.0.9
+2026-01-15 09:15:45 INFO  [http] POST /api/orders 201 (91ms)
+2026-01-15 09:16:22 WARN  [cache] Redis hit rate below threshold (36%)
+2026-01-15 09:17:30 ERROR [payment] Stripe API returned 500 for charge_id=ch_12351
+2026-01-15 09:18:01 INFO  [worker] Job #4528 completed
+2026-01-15 09:19:45 WARN  [db] Connection pool running low (3/10 free)
+2026-01-15 09:20:30 ERROR [auth] Failed login attempt for user=alice ip=10.0.0.5
+2026-01-15 09:21:15 INFO  [http] GET /api/products 200 (22ms)
