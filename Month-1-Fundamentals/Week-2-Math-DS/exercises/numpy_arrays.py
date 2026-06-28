@@ -92,4 +92,21 @@ print(f"Element wise multiplication: {np.multiply(A,B)}")
 print(f"Inverse of A: {np.linalg.inv(A)}")
 print(f"Determinant of A: {np.linalg.det(A)}")
 
+'''
+Conditional Operations
 
+arr = np.array([1,5,3,8,2,9,4])
+1. Get elements > 5
+2. Get elements between 2-7
+3. Replace elements > 5 with 0
+4. Count elements >= 5
+
+'''
+
+coarr = np.array([1,5,3,8,2,9,4])
+print(" elements > 5: ",coarr[coarr>5])
+print(" elements between 2-7: ",coarr[(coarr>=2) & (coarr<=7)] )
+print(" elements >= 5: ",np.sum(coarr[coarr>=5]))
+modified = coarr.copy()
+modified[modified>5] = 0 
+print(modified)
