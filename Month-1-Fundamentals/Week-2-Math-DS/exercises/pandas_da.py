@@ -32,4 +32,20 @@ titanic_df = pd.read_csv("https://raw.githubusercontent.com/datasciencedojo/data
 print(titanic_df.shape)
 print("First 5 rows: ",titanic_df.head(5))
 print(titanic_df.info(),titanic_df.describe())
-print()
+print(titanic_df.isnull().sum())
+
+'''
+Create Series: s = pd.Series([10, 20, 30, 40, 50])
+1. Access element at index 2
+2. Get values > 25
+3. Get descriptive stats (mean, std, min, max)
+4. Sort values
+5. Get unique values
+'''
+
+s = pd.Series([10,20,30,40,40,50,50])
+print(f"Access element at index 2: {s[2]}")
+print(f" Get values > 25: {s[s>25]}")
+print(f"Descriptive stats: {s.describe()}")
+print(f"Sorted values: {s.sort_values()}")
+print(f"Unique values: {s.drop_duplicates()}")
