@@ -33,30 +33,3 @@ print(titanic_df.shape)
 print("First 5 rows: ",titanic_df.head(5))
 print(titanic_df.info(),titanic_df.describe())
 print()
-
-'''
-Using dataset from Exercise 2:
-1. Filter rows where age > 30 (or equivalent column)
-2. Filter rows where salary (or value) between 50000-70000
-3. Filter multiple conditions (AND, OR)
-4. Select specific columns
-5. Get rows by label (iloc, loc)
-'''
-print("Filter rows where age > 30: ",titanic_df[titanic_df["Age"]>30])
-print("Filter rows where salary (or value) between 50000-70000: ")
-
-try:
-    # Filter rows: salary not null AND between 50000-70000
-    filtered = df[(df["salary"].notna()) & (df["salary"] >= 50000) & (df["salary"] <= 70000)]
-    print(filtered)
-
-except Exception as e:
-    print(f"Error occurred: {e}")
-
-#print(titanic_df["Survived"])
-
-#Select passengers who are male AND older than 30
-print(titanic_df[(titanic_df["Sex"] == "male" )&( titanic_df["Age"]>30)])
-print(titanic_df[(titanic_df["Sex"]=="female" )|(titanic_df["Pclass"]==1)])
-print(titanic_df[(titanic_df["Survived"]==1) & (titanic_df["Sex"]=="male")])
-print(titanic_df[((titanic_df["Sex"] == "male" )&( titanic_df["Age"]>30)) &((titanic_df["Survived"]==1) & (titanic_df["Sex"]=="female")) ])
