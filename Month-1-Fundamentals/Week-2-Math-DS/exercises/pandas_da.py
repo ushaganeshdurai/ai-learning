@@ -61,11 +61,19 @@ print(titanic_df[(titanic_df["Sex"]=="female" )|(titanic_df["Pclass"]==1)])
 print(titanic_df[(titanic_df["Survived"]==1) & (titanic_df["Sex"]=="male")])
 print(titanic_df[((titanic_df["Sex"] == "male" )&( titanic_df["Age"]>30)) &((titanic_df["Survived"]==1) & (titanic_df["Sex"]=="female")) ])
 
-
 sales = pd.read_csv("sales_data.csv")
 sales_df = pd.DataFrame(sales)
 
 print(sales_df.dropna(),sales_df.drop_duplicates())
-#print(sales_df.shape(),sales_df.info(),sales_df.describe())
-
-print(sales_df[sales_df["date"]>"2026-01-01" & sales_df["date"]<"2026-01-03"])
+print(sales_df.shape(),sales_df.info(),sales_df.describe())
+sales_df["date"] =pd.to_datetime(sales_df["date"]) 
+print(sales_df[(sales_df["date"]>="2026-01-06") & (sales_df["date"]<="2026-01-09")])
+print("Product revenue: ",sales_df.groupby("product")["revenue"].sum())
+print("Daily average:",sales_df.groupby("date")["revenue"].mean())
+print("Sorted in descending order",sales_df.groupby("product")["revenue"].sum().sort_values(ascending=False))
+print("Top 3 products",sales_df.groupby("product")["revenue"].sum().sort_values(ascending=False).head(3))
+with open("sales_report.txt","a") as f:
+    f.write("Prdouct Revenue:")
+    f.write(sales_df.groupby("product")["revenue"].sum().to_string())
+    f.write("\n Daily average: ")
+    f.write(sales_df.groupby("date")["revenue"].mean().to_string())
