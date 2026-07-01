@@ -60,3 +60,12 @@ print(titanic_df[(titanic_df["Sex"] == "male" )&( titanic_df["Age"]>30)])
 print(titanic_df[(titanic_df["Sex"]=="female" )|(titanic_df["Pclass"]==1)])
 print(titanic_df[(titanic_df["Survived"]==1) & (titanic_df["Sex"]=="male")])
 print(titanic_df[((titanic_df["Sex"] == "male" )&( titanic_df["Age"]>30)) &((titanic_df["Survived"]==1) & (titanic_df["Sex"]=="female")) ])
+
+
+sales = pd.read_csv("sales_data.csv")
+sales_df = pd.DataFrame(sales)
+
+print(sales_df.dropna(),sales_df.drop_duplicates())
+#print(sales_df.shape(),sales_df.info(),sales_df.describe())
+
+print(sales_df[sales_df["date"]>"2026-01-01" & sales_df["date"]<"2026-01-03"])
