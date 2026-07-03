@@ -26,3 +26,23 @@ plt.show()
 5. Customize line colors and styles
 6. Add title and labels
 '''
+
+y=xaxis 
+cubed_y=np.power(xaxis,3)
+plt.plot(xaxis, y, label="y=x", color='red', linestyle='-', linewidth=2)
+plt.plot(xaxis, yaxis, label="y=x^2", color='blue', linestyle='--', linewidth=2)
+plt.plot(xaxis, cubed_y, label="y=x^3", color='green', linestyle=':', linewidth=2)
+plt.title("Exercise 2")
+plt.legend()
+plt.show()
+
+'''
+1. Generate random x, y data (100 points)
+2. Create scatter plot
+3. Color points by z values
+4. Add colorbar
+5. Set marker size
+6. Add title and labels
+'''
+ 
+
