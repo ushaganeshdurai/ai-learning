@@ -84,4 +84,44 @@ Given matrix M (4x3):
 4. Analyze singular values (importance)
 5. Rank of matrix
 '''
+M = np.array([
+    [1, 2, 3],
+    [5, 6, 8],
+    [4, 7, 9],
+    [10, 89, 67]
+])
+
+# Perform SVD
+U, S, Vh = np.linalg.svd(M, full_matrices=False)
+
+# Reconstruct matrix
+M_reconstructed = U @ np.diag(S) @ Vh
+
+# Verify reconstruction
+print("Reconstructed Matrix:")
+print(M_reconstructed)
+
+print("\nVerification:")
+print(np.allclose(M, M_reconstructed))
+
+# Analyze singular values
+print("\nSingular Values:")
+print(S)
+
+# Rank
+print("\nRank of Matrix:")
+print(np.linalg.matrix_rank(M))
+
+'''
+Given system:
+2x + 3y = 8
+4x + y = 10
+
+1. Write as matrix equation Ax = b
+2. Solve using np.linalg.solve()
+3. Verify solution
+4. Solve using inverse method
+5. Solve using least squares
+'''
+
 
