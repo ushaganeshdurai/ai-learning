@@ -13,6 +13,7 @@ v2 = [4, 5, 6]
 '''
 
 import numpy as np 
+from scipy import stats
 
 v1 = np.array([1,2,3])
 v2 = np.array([4,5,6])
@@ -113,6 +114,8 @@ print("\nRank of Matrix:")
 print(np.linalg.matrix_rank(M))
 
 '''
+Linear System:
+
 Given system:
 2x + 3y = 8
 4x + y = 10
@@ -123,5 +126,14 @@ Given system:
 4. Solve using inverse method
 5. Solve using least squares
 '''
+A = np.array([[2,3],[4,1]])
+b = np.array([8,10])
+print("Solve using solve() method: ",np.linalg.solve(A,b))
+sol = np.linalg.solve(A,b)
 
+print("Verify it: ",A @ sol)
+x_lstsq, residuals, rank, s = np.linalg.lstsq(A, b, rcond=None)
+
+print(x_lstsq)
+print(np.linalg.inv(A) @ b)
 
