@@ -63,13 +63,13 @@ print(f"Sum: {np.sum(a)}, Mean: {np.mean(a)}, STD: {np.std(a)}")
 5. Reshape to (9,1)
 6. Transpose it
 '''
-3D_arr = np.array([[1,2,3],
+D3_arr = np.array([[1,2,3],
                   [4,5,6],
                   [7,8,9]])
-print(3D_arr[1,2])
-print(3D_arr[:,2])
-print(3D_arr.reshape(9,1))
-print(3D_arr.T)
+print(D3_arr[1,2])
+print(D3_arr[:,2])
+print(D3_arr.reshape(9,1))
+print(D3_arr.T)
 
 '''
 Matrix operations

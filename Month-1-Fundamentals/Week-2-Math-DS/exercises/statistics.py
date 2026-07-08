@@ -1,7 +1,6 @@
 import numpy as np
 from scipy import stats
 
-
 '''
 Dataset: [15, 22, 18, 25, 20, 17, 23, 19, 24, 21]
 
@@ -30,3 +29,5 @@ print(stats.iqr(data))
 4. Calculate mean and std of samples
 5. Compare with theoretical values
 '''
+
+normal_distribution = np.random.normal()
