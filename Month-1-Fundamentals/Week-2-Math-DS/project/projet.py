@@ -35,6 +35,29 @@ Use realistic values and randomly generate the data.
 4. Create a matrix containing all numerical features.
 
 ***
+'''
+
+import numpy as np 
+import pandas as pd 
+n = 1000
+emp_id = [f"EMP{str(i+1001).zfill(5)}" for i in range (n)]
+age = np.random.randint(22,60,n)
+age = np.random.randint(22, 65, n)
+years_experience = np.maximum(0, age - np.random.randint(22, 30, n))
+years_experience = np.minimum(years_experience, age - 18)
+base_salary = 35000 + (years_experience *2500)
+performance_score = np.round(np.clip(np.random.normal(3.5, 0.8, n), 1.0, 5.0), 2)
+training_hours = np.random.randint(0, 80, n)
+df = pd.DataFrame({
+    "Employee_ID":emp_id,
+    "Age":age,
+    "Years_Of_Experience":years_experience,
+    "Salary":base_salary,
+    "Performance_Score":performance_score,
+    "Training_hours":training_hours
+    })
+df.to_csv("data.csv",index=False)
+'''
 
 # Part 2: Pandas & Data Analysis
 
