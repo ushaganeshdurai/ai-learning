@@ -42,7 +42,6 @@ import pandas as pd
 n = 1000
 emp_id = [f"EMP{str(i+1001).zfill(5)}" for i in range (n)]
 age = np.random.randint(22,60,n)
-age = np.random.randint(22, 65, n)
 years_experience = np.maximum(0, age - np.random.randint(22, 30, n))
 years_experience = np.minimum(years_experience, age - 18)
 base_salary = 35000 + (years_experience *2500)
@@ -56,6 +55,19 @@ df = pd.DataFrame({
     "Performance_Score":performance_score,
     "Training_hours":training_hours
     })
+
+
+
+def categorize(salary):
+    if salary<50000:
+        return "Low"
+    elif salary <70000:
+        return "Medium"
+    else:
+        return "High"
+
+df["Salary_category"] =df["Salary"].apply(categorize)
+
 df.to_csv("data.csv",index=False)
 '''
 
@@ -83,7 +95,18 @@ df.to_csv("data.csv",index=False)
 * What is the average performance score for each category?
 
 ***
-
+'''
+emp_df = pd.read_csv("data.csv")
+print("First 5 rows: ",emp_df.head(5))
+print("Last 5 rows",emp_df.tail(5))
+print("Average salary: ",emp_df["Salary"].mean())
+print("Average performance score: ",emp_df["Performance_Score"].mean())
+print("Average experience: ",emp_df["Years_Of_Experience"].mean())
+print("Highest-paid employee: ",emp_df.loc[emp_df["Salary"].idxmax()])
+print("Lowest-paid employee: ",emp_df.loc[emp_df["Salary"].idxmin()])
+print("Average performance score for each category:\n",emp_df.groupby("Salary_category")["Performance_Score"].mean())
+print("Salary category has the most employees: \n",emp_df.groupby("Salary_category")["Employee_ID"].count().idxmax())
+'''
 # Part 3: Statistics & Probability
 
 ### Tasks
