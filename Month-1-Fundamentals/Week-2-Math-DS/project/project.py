@@ -39,6 +39,7 @@ Use realistic values and randomly generate the data.
 
 import numpy as np 
 import pandas as pd 
+from scipy import stats
 n = 1000
 emp_id = [f"EMP{str(i+1001).zfill(5)}" for i in range (n)]
 age = np.random.randint(22,60,n)
@@ -137,7 +138,17 @@ print("Salary category has the most employees: \n",emp_df.groupby("Salary_catego
 Compare your sample statistics with the expected values used while generating the data.
 
 ***
+'''
+print("Mean of Salary",emp_df["Salary"].mean())
+print("Mean of Perforance score: \n ",emp_df["Performance_Score"].mean())
+print("Median of Salary: \n",emp_df["Salary"].median())
+print("Median of Performance score: \n",emp_df["Performance_Score"].median())
+print("Mode of Salary: \n",emp_df["Salary"].mode())
+print("Mode of Performance score: \n",emp_df["Performance_Score"].mode())
+print("Median of Salary: \n",emp_df["Salary"].var())
+print("Median of Performance score: \n",emp_df["Performance_Score"].median())
 
+'''
 # Part 4: Data Visualization
 
 ### Create the following plots
