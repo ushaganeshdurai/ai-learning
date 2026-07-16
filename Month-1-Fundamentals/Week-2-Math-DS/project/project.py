@@ -145,9 +145,11 @@ print("Median of Salary: \n",emp_df["Salary"].median())
 print("Median of Performance score: \n",emp_df["Performance_Score"].median())
 print("Mode of Salary: \n",emp_df["Salary"].mode())
 print("Mode of Performance score: \n",emp_df["Performance_Score"].mode())
-print("Median of Salary: \n",emp_df["Salary"].var())
-print("Median of Performance score: \n",emp_df["Performance_Score"].median())
-
+print("Variance of Salary: \n",emp_df["Salary"].var())
+print("Variance of Performance score: \n",emp_df["Performance_Score"].var())
+print("Standard Deviation of Performance score: \n",np.std(emp_df["Performance_Score"]))
+print("Standard deviation of Salary: \n",np.std(emp_df["Salary"]))
+print("Outlier in salary: ",stats.iqr(emp_df["Salary"]))
 '''
 # Part 4: Data Visualization
 
